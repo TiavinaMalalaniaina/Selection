@@ -73,7 +73,7 @@ Couleur mis en jeu
 .listes li {
     display: block;
     padding: 10px;
-    border-bottom: solid 1px #67b7e2;
+    border-bottom: solid 1px #466060;
     margin-bottom: 8px;
     transition: .2s;
 }
@@ -82,15 +82,15 @@ Couleur mis en jeu
     text-decoration: none;
     display: block;
     transition: .2s;
-    color: #86bbd8;
-}
-
-.listes a:hover {
     color: #466060;
 }
 
+.listes a:hover {
+    color: #86bbd8;
+}
+
 .listes li:hover {
-    border-bottom: solid 1px #466060;
+    border-bottom: solid 1px #86bbd8;
 }
 
 /* width */
@@ -154,4 +154,17 @@ Couleur mis en jeu
 
 .fc-scrollgrid-sync-inner a {
     text-decoration: none;
+}
+
+.entrer-matiere h4 {
+    font-size: 16px;
+}
+
+.entrer-matiere span {
+    margin-left: 20px;
+    color: #86bbd8;
+}
+
+.entrer-matiere h5 {
+    color: #F8CA5D;
 }

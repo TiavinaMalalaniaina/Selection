@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../assets/fonts/fontawesome-5/css/all.min.css">
+    <script src="../../assets/js/emploie_du_temps_util.js"></script>
     <script src='../../assets/js/fullcalendar-6.1.4/dist/index.global.js'></script>
     <link rel="stylesheet" href="../../assets/css/emploie_du_temps.css">
     <title>Gestion d'emploie du temps</title>
@@ -23,14 +24,56 @@
                     <h3 class="entete">Listes de vos matières</h3>
                     <div class="listes">
                         <ul>
-                            <li><a href="#">Mathématique</a></li>
-                            <li><a href="#">Physique et Chimie</a></li>
-                            <li><a href="#">Statistiques et Probabilités</a></li>
-                            <li><a href="#">Algorithme</a></li>
-                            <li><a href="#">Communication</a></li>
+                            <li><a href="#" data-bs-toggle="modal" onclick="updateFormValue('Mathématique', 1)"  data-bs-target="#exampleModal">Mathématique</a></li>
+                            <li><a href="#" data-bs-toggle="modal" onclick="updateFormValue('Physique et Chimie', 2)" data-bs-target="#exampleModal">Physique et Chimie</a></li>
+                            <li><a href="#" data-bs-toggle="modal" onclick="updateFormValue('Statistiques et Probabilités', 3)" data-bs-target="#exampleModal">Statistiques et Probabilités</a></li>
+                            <li><a href="#" data-bs-toggle="modal" onclick="updateFormValue('Algorithme', 4)" data-bs-target="#exampleModal">Algorithme</a></li>
+                            <li><a href="#" data-bs-toggle="modal" onclick="updateFormValue('Communication', 5)" data-bs-target="#exampleModal">Communication</a></li>
                         </ul>
                     </div>
                 </div>
+                
+                <!-- Modal -->
+                <div class="modal fade entrer-matiere" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <form action="">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Gestion emploie du temps</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <input type="hidden" name="idMatiere" id="idMatiere" value="">
+                                <h4>Matière : <span id="display-matiere">Mathématique</span></h4>
+                                <select name="jour" id="" class="form-select mt-3">
+                                    <option value="">Lundi</option>
+                                    <option value="">Mardi</option>
+                                    <option value="">Mercredi</option>
+                                    <option value="">Jeudi</option>
+                                    <option value="">Vendredi</option>
+                                    <option value="">Samedi</option>
+                                    <option value="">Dimanche</option>
+                                </select>
+                                <div class="row mt-3">
+                                    <div class="col-md-6">
+                                        <label for="" class="form-label">Heure debut</label>
+                                        <input type="time" name="debut" class="form-control">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="" class="form-label">Heure fin</label>
+                                        <input type="time" name="fin" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                                <button type="submit" class="btn btn-primary">Valider</button>
+                            </div>
+                        </form>
+                    </div>
+                    </div>
+                </div>
+
                 <div class="ajouter-matiere mt-5">
                         <form action="#" method="POST">
                             <p><i class="fas fa-book"></i> Ajouter nouvelle matière</p>
