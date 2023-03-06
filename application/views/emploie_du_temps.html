@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/fonts/fontawesome-5/css/all.min.css">
+    <script src='../../assets/js/fullcalendar-6.1.4/dist/index.global.js'></script>
+    <link rel="stylesheet" href="../../assets/css/emploie_du_temps.css">
+    <title>Gestion d'emploie du temps</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="titre mb-3">Gestion d'emploie du temps</h1>
+        <div class="rappel">
+            <div class="cours"><i class="far fa-calendar-check verifier"></i> Cours de Science en progression</div>
+            <div class="cours"><i class="far fa-clock clock"></i> Vous aurez un cours de mathematique dans <span>12 min</span></div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-3 matiere">
+                <div class="listes-matieres mt-4">
+                    <h3 class="entete">Listes de vos matières</h3>
+                    <div class="listes">
+                        <ul>
+                            <li><a href="#">Mathématique</a></li>
+                            <li><a href="#">Physique et Chimie</a></li>
+                            <li><a href="#">Statistiques et Probabilités</a></li>
+                            <li><a href="#">Algorithme</a></li>
+                            <li><a href="#">Communication</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ajouter-matiere mt-5">
+                        <form action="#" method="POST">
+                            <p><i class="fas fa-book"></i> Ajouter nouvelle matière</p>
+                            <input type="text" class="form-control" placeholder="Nom du matière">
+                            <button class="btn btn-info mt-3">Ajouter</button>
+                        </form>
+                </div>
+            </div>
+            
+            <div class="col-md-9 programmes">
+                <h3 class="mb-3">Programmes hebdomadaires</h3>
+                <script src="../../assets/js/emploie_du_temps.js"></script>
+                <div id='calendar'></div>
+            </div>
+        </div>
+    </div>
+    <script src="../../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
