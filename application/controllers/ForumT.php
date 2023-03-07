@@ -17,7 +17,7 @@ class ForumT extends CI_Controller {
 	}
 
 	public function allProblem() {
-		$problems = $this->forumT_model->getAllNonResolveProblem();
+		$problems = $this->forumT_model->getNonResolveProblemByFiliere(3);
 		$data = array(
 			'problems' => $problems
 		);
@@ -30,7 +30,7 @@ class ForumT extends CI_Controller {
 		// $idfiliere = $this->input->post('idfiliere');
 
 		$user = 1;
-		$problem = "Andry Rajoelina";
+		$problem = "Fito vavy Fito vinany";
 		$idfiliere = 2;
 
 		$this->forumT_model->saveProblem($user, $idfiliere, $problem);
@@ -40,7 +40,7 @@ class ForumT extends CI_Controller {
 
 	public function addAnswer() {
 		$user = 2;
-		$response = 'Marc Ravalo';
+		$response = 'NONNNNNN';
 		$idforum_problem = 3;
 		$this->forumT_model->saveResponse($user, $idforum_problem, $response);
 
@@ -59,5 +59,24 @@ class ForumT extends CI_Controller {
 		);
 		$this->load->view('problem.php', $data);
 	}
+
+	public function vote() {
+		$this->load->model('voteT_model');
+		$idforum_response = 2;
+		$iduser = 1;
+		$this->voteT_model->saveVote($iduser, $idforum_response);
+	}
+
+	public function resolve() {
+		$idforum_problem = 1;
+		$this->forumT_model->setEtatProblem($idforum_problem, 1);
+	}
+
+
+	public function remove_problem() {
+		$idforum_problem = 1;
+		$this->forumT_model->setEtatProblem($idforum_problem, -1);
+	}
+
 	
 }

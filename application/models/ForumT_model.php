@@ -42,7 +42,7 @@
 
         public function getNonResolveProblemByFiliere($idFiliere) {
             $problems = array();
-            $request = "SELECT * FROM forum_problem WHERE idfiliere=%s";
+            $request = "SELECT * FROM forum_problem WHERE idfiliere=%s AND etat=0";
             $request = sprintf($request, $idFiliere);
             $query = $this->db->query($request);
             foreach ($query->result_array() as $row) {
@@ -54,7 +54,7 @@
 
         public function getResponseByIdForumProblem($idForum_problem) {
             $response = array();
-            $request = "SELECT * FROM forum_response WHERE idforum_problem=%s";
+            $request = "SELECT * FROM forum_response_vote WHERE idforum_problem=%s";
             $request = sprintf($request, $idForum_problem);
             $query = $this->db->query($request);
             foreach ($query->result_array() as $row) {
@@ -62,6 +62,7 @@
             }
             return $response;
         }
+
         public function getProblemByIdForumProblem($idForum_problem) {
             $response = array();
             $request = "SELECT * FROM forum_problem WHERE idforum_problem=%s";
@@ -73,10 +74,7 @@
             return $response;
         }
 
-
-        public function getDetail_problem($idforum_problem) {
-            $request = "SELECT * FROM forum_response ";
-        }
-
+        
+        
     }
 ?>
