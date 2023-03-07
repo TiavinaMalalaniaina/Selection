@@ -74,11 +74,11 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> 'pgsql:host=localhost;port=5433;dbname=garage',
+	'dsn'	=> 'pgsql:host=localhost;port=5434;dbname=selection',
 	'hostname' => 'localhost',
-	'username' => 'garage',
-	'password' => 'garage',
-	'database' => 'garage',
+	'username' => 'postgres',
+	'password' => 'malalaniaina',
+	'database' => 'selection',
 	'dbdriver' => 'pdo',
 	'port'	=> 5432,
 	'dbprefix' => '',
