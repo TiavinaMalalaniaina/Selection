@@ -1,0 +1,205 @@
+/* Design du selection hackaton ITU
+
+Couleur mis en jeu
+	- principale : #86BBD8
+	- secondaire : #F8CA5D 
+	- autre : #466060 - #EBC3DB - #EF8275 */
+
+body {
+    background-image: linear-gradient(45deg, #F8CA5D, white, white);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+.container {
+    width: 80%;
+    margin-top: 3%;
+    border-radius: 10px;
+    padding: 3%;
+}
+
+.question img {
+    width: 50%;
+}
+
+.image, .params {
+    text-align: center;
+}
+
+.container {
+    padding-top: 5%;
+}
+
+.params {
+    padding: 0;
+}
+
+.params a {
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.metadata {
+    font-size: 12px;
+    color: #466060;
+}
+
+.content p {
+    padding: 15px 20px;
+    font-size: 14px;
+    letter-spacing: 3px;
+    transition: .5s;
+}
+
+.content h1 {
+    color: #EF8275;
+}
+
+
+.separation {
+    width: 90%;
+    height: 40px;
+    background-color: #F8CA5D;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+
+.separation p {
+    margin: 0;
+    padding: 0 2%;
+    color: white;
+    font-weight: 500;
+}
+
+.commentaires {
+    width: 94%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profil {
+    text-align: center;
+    padding: 0;
+}
+
+.profil img {
+    text-align: center;
+    width: 80%;
+}
+
+.profil label {
+    color: #466060;
+    font-size: 10px;
+}
+
+.entete {
+    color: #86BBD8;
+    font-size: 16px;
+}
+
+.reponse p {
+    font-size: 15px;
+    color: #585858;
+}
+
+.dislike {
+    color: #EF8275;
+}
+
+.vote {
+    text-align: center;
+}
+
+.vote span {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+    .content h1 {
+        color: #EF8275;
+        font-size: 16px;
+    }
+
+    .params a {
+        text-decoration: none;
+        font-size: 9px;
+    }
+    
+    .metadata {
+        font-size: 9px;
+        color: #466060;
+    }
+    
+    .content p {
+        padding: 15px 20px;
+        font-size: 12px;
+        letter-spacing: 3px;
+        transition: .5s;
+    }
+
+    .vote span {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+.flottant {
+    position: fixed;
+    top: 215px;
+    left: 33px;
+    width: 150px;
+    animation: flotte 2s linear infinite;
+}
+
+@keyframes flotte {
+    0%  {top: 215px;}
+    50%  {top: 230px;}
+    100%  {top: 215px;}
+}
+
+.chat {
+    background-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: fixed;
+    bottom: 70px;
+    right: 35px;
+    transition: 1s;
+}
+
+.chat img {
+    width: 100%;
+}
+
+.chat:hover {
+    transform: rotate(360deg);
+}
+
+.toast-position {
+    bottom: 65px;
+    right: 150px;
+}
+
+.toast-entete {
+    color: #F8CA5D;
+}
+
+.cacher {
+    visibility: hidden;
+}
+
+.montrer {
+    visibility: visible;
+}
