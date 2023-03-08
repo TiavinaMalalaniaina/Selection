@@ -1,0 +1,75 @@
+/* Design du selection hackaton ITU
+
+Couleur mis en jeu
+	- principale : #86BBD8
+	- secondaire : #F8CA5D 
+	- autre : #466060 - #EBC3DB - #EF8275 */
+
+    body {
+        background-image: url("../../assets/images/fond-login.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    
+    .login-form {
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+        text-align: center;
+        border-radius: 5%;
+        background-color: #76a6e170;
+        padding: 4% 5%;
+        margin-top: 5%;
+    }
+    
+    .login-form img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .formulaire {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .formulaire select {
+        height: 45px;
+    }
+    
+    .connexion {
+        background-color: #F8CA5D;
+        border: #F8CA5D;
+        width: 30%;
+        height: 40px;
+    }
+    
+    
+    .formulaire p {
+        text-align: right;
+        margin-top: 20px;
+    }
+    
+    .formulaire a {
+        text-decoration: none;
+    }
+    
+    .accueil {
+        font-weight: 500;
+        font-size: 27px;
+        color: #394146;
+    }
+
+    .equipe {
+        text-align: left;
+    }
+    
+    .equipe label {
+        font-weight: 800;
+    }
+
+    .equipe i {
+        transform: translate(34px, 13px);
+        font-size: 18px;
+        color: #eb9ecc;
+    }
