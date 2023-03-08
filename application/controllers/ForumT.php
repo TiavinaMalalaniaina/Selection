@@ -6,8 +6,10 @@ class ForumT extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('forumT_model');
+		$this->load->model('userT_model');
+		$this->load->helpers('date_helper');
 	}
-
+	
 
 	public function index() {
 		$this->load->view('welcome_message');
@@ -16,55 +18,54 @@ class ForumT extends CI_Controller {
 	public function test() {
 	}
 
-	public function allProblem() {
-		$problems = $this->forumT_model->getNonResolveProblemByFiliere(3);
+	public function problemByFiliere() {
+		$idUser = 4;
+		$user = $this->userT_model->getUserById($idUser);
+		$idfiliere = $user['idfiliere'];
+		$problems = $this->forumT_model->getAllProblemByFiliere($idfiliere);
 		$data = array(
-			'problems' => $problems
+			'problems' => $problems,
+			'user' => $user
 		);
-		$this->load->view('problem.php', $data);
+		$this->load->view('listes_forum', $data);
 	} 
 
 	public function addProblem() {
-		// $user = $this->session->userdata('iduser');
-		// $problem = $this->input->post('problem');
-		// $idfiliere = $this->input->post('idfiliere');
-
-		$user = 1;
-		$problem = "Fito vavy Fito vinany";
-		$idfiliere = 2;
-
-		$this->forumT_model->saveProblem($user, $idfiliere, $problem);
-
-		redirect(site_url('ForumT/allProblem'));
+		$iduser = 3;
+		$idfiliere = $this->input->post('idfiliere');
+		$problem = $this->input->post('problem');
+		$desc = $this->input->post('desc');
+		$this->forumT_model->saveProblem($iduser, $idfiliere, $problem, $desc);
+		redirect(site_url('ForumT/problemByFiliere'));
 	}
 
 	public function addAnswer() {
 		$user = 2;
-		$response = 'NONNNNNN';
-		$idforum_problem = 3;
+		$response = $this->input->post('response');
+		$idforum_problem = $this->input->post('idforum_problem');
 		$this->forumT_model->saveResponse($user, $idforum_problem, $response);
-
+		redirect(site_url('ForumT/detail_forum?idforum_problem='.$idforum_problem));
 	}
 
 	public function detail_forum() {
 		// $idforum_problem = $this->input->post('idproblem');
-		$idforum_problem = 1;
+		$idforum_problem = $this->input->get('idforum_problem');
 		$problem = $this->forumT_model->getProblemByIdForumProblem($idforum_problem);
 		$response = $this->forumT_model->getresponseByIdForumProblem($idforum_problem);
-		$a = array(
-			'problem' => array ($problem, $response)
-		);
 		$data = array(
-			'problems' => $response
+			'problems' => $problem,
+			'responses' => $response
 		);
-		$this->load->view('problem.php', $data);
+		$this->load->view('detail_forum', $data);
 	}
 
 	public function vote() {
 		$this->load->model('voteT_model');
-		$idforum_response = 2;
 		$iduser = 1;
-		$this->voteT_model->saveVote($iduser, $idforum_response);
+		$idforum_response = $this->input->get('idforum_response');
+		$idforum_problem = $this->input->get('idforum_problem');
+		$this->voteT_model->saveVote($idforum_response, $iduser);
+		redirect(site_url('ForumT/detail_forum?idforum_problem='.$idforum_problem));
 	}
 
 	public function resolve() {
