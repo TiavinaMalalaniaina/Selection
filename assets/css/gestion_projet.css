@@ -1,0 +1,173 @@
+/* Design du selection hackaton ITU
+
+Couleur mis en jeu
+	- principale : #86BBD8
+	- secondaire : #F8CA5D 
+	- autre : #466060 - #EBC3DB - #EF8275 */
+
+.container {
+    margin-top: 2%;
+    width: 90%;
+}
+
+.container h1 {
+    font-size: 25px;
+    color: #86BBD8;
+}
+
+.project-main h3 {
+    font-size: 17px;
+    text-align: center;
+    color: #ef8275;
+}
+
+.listes-projet ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.listes-projet li {
+    list-style: none;
+    margin: 0px 8px;
+    text-align: center;
+}
+
+.progression .ldBar path.mainline {
+    stroke-width: 3;
+    stroke: #09f;
+    stroke-linecap: round;
+}
+
+.progression .ldBar-label {
+    color: #09f;
+    font-family: 'varela round';
+    font-size: 14px;
+    font-weight: 900;
+    margin-left: 65px;
+}
+
+.titre, .progression {
+    display: flex;
+    align-items: center;
+}
+
+.detail {
+    margin-left: 40px;
+}
+
+.detail p {
+    font-size: 25px;
+}
+
+.detail h3 {
+    color: #F8CA5D;
+    font-size: 25px;
+}
+
+.progress {
+    width: 70%;
+}
+
+.date-limit {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.date {
+    background-color: #86BBD8;
+    padding: 7px;
+    border-radius: 10px;
+}
+
+.date-limit div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jour-restant {
+    text-align: center;
+}
+
+.jour {
+    text-align: left;
+}
+
+.jour-restant span {
+    margin-left: 30px;
+}
+
+.description {
+    width: 100%;
+    border-color: #466060;
+}
+
+.enregistrer {
+    width: 20%;
+    position: relative;
+    margin-left: 70%;
+    margin-top: 20px;
+}
+
+.form {
+    width: 70%;
+    margin-left: 5%;
+}
+
+.listes-taches ul {
+    line-height: 35px;
+    list-style: none;
+}
+
+.tache h3 {
+    color: #F8CA5D;
+}
+
+.listes-taches i {
+    margin-right: 20px;
+    font-size: 17px;
+}
+
+.listes-taches li:hover {
+    color: #86BBD8;
+    cursor: pointer;
+}
+
+.listes-taches a {
+    text-decoration: none;
+}
+
+.new-task i {
+    margin-right: 20px;
+}
+
+.new-task button:hover {
+    color: white;
+}
+
+.espacement {
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.detail h3 a {
+    color: #466060;
+    font-size: 15px;
+}
+
+.new-project {
+    padding: 15px;
+    border: solid 1px #46606038;
+    margin-top: 4%;
+    border-radius: 5px;
+}
+
+.rename {
+    color: #466060;
+    font-size: 17px !important;
+}
+
+.title {
+    color: #F8CA5D;
+    font-size: 20px !important;
+}

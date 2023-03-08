@@ -73,27 +73,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
-$db['default'] = array(
-	'dsn'	=> 'pgsql:host=localhost;port=5434;dbname=selection',
-	'hostname' => 'localhost',
-	'username' => 'postgres',
-	'password' => 'malalaniaina',
-	'database' => 'selection',
-	'dbdriver' => 'pdo',
-	'port'	=> 5432,
-	'dbprefix' => '',
-	'pconnect' => FALSE,
-	'db_debug' => (ENVIRONMENT !== 'production'),
-	'cache_on' => FALSE,
-	'cachedir' => '',
-	'char_set' => 'utf8',
-	'dbcollat' => 'utf8_general_ci',
-	'swap_pre' => '',
-	'encrypt' => FALSE,
-	'compress' => FALSE,
-	'stricton' => FALSE,
-	'failover' => array(),
-	'save_queries' => TRUE
-);
 
+$db['default'] = array(
+    'dsn'       => '',
+    'hostname'  => 'localhost', // replace with the hostname or IP address
+    'username'  => 'postgres',
+    'password'  => 'johan',
+    'database'  => 'compta',
+    'dbdriver'  => 'postgre',
+    'dbprefix'  => '',
+    'pconnect'  => FALSE,
+    'db_debug'  => (ENVIRONMENT !== 'production'),
+    'cache_on'  => FALSE,
+    'cachedir'  => '',
+    'char_set'  => 'utf8',
+    'dbcollat'  => 'utf8_general_ci',
+    'swap_pre'  => '',
+    'encrypt'   => FALSE,
+    'compress'  => FALSE,
+    'stricton'  => FALSE,
+    'failover'  => array(),
+    'save_queries' => TRUE
+);
 
