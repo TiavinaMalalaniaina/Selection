@@ -1,0 +1,61 @@
+body {
+    background-image: url("../../assets/images/fond-login.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.login-form {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    text-align: center;
+    border-radius: 5%;
+    background-color: #76a6e170;
+    padding: 4% 5%;
+    margin-top: 10%;
+}
+
+.login-form img {
+    width: 100px;
+    height: 100px;
+}
+
+.formulaire {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.formulaire input {
+    height: 45px;
+    padding-left: 50px;
+}
+
+.connexion {
+    background-color: #F8CA5D;
+    border: #F8CA5D;
+}
+
+.formulaire p {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.formulaire a {
+    text-decoration: none;
+}
+
+.accueil {
+    font-weight: 500;
+    color: #394146;
+}
+
+.equipe {
+    display: flex;
+}
+
+.equipe i {
+    transform: translate(34px, 13px);
+    font-size: 18px;
+    color: #eb9ecc;
+}
