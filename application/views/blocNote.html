@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/fonts/fontawesome-5/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/blocNote.css">
+    <link rel="stylesheet" href="../../assets/css/header.css">
+    <meta name="language" content="english">
+    <meta name="viewport" content="width=device-width">
+    <meta name="twitter:description" content="Quill is a free, open source rich text editor built for the modern web.">
+    <meta name="twitter:image" content="https://quilljs.com/assets/images/brand-asset.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://quilljs.com/standalone/full/">
+    <meta property="og:image" content="https://quilljs.com/assets/images/brand-asset.png">
+    <meta property="og:title" content="Full Editor - Quill">
+    <meta property="og:site_name" content="Quill">
+    <link rel="canonical" href="https://quilljs.com/standalone/full/">
+    <link type="application/atom+xml" rel="alternate" href="https://quilljs.com/feed.xml" title="Quill - Your powerful rich text editor" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css" />
+    <link rel="stylesheet" href="../../assets/js/quill/quill.snow.css" />
+    <title>Vos notes</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="../../assets/images/logo-StudArd.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-flex liens" id="navbarNav">
+                <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Emploie du temps</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">Forum</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Projet</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Mes Notes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Mon compte</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link deconnect" href="#"><i class="fas fa-power-off"></i></a>
+                </li>
+                </ul>
+          </div>
+        </div>
+    </nav>
+
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-4 listes">
+                <h3>Listes de vos notes</h3>
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                      La reproduction humaine
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">Gestion et comptabilité</a>
+                    <a href="#" class="list-group-item list-group-item-action">Devoir a faire</a>
+                </div>
+            </div>    
+            <div class="offset-md-1 col-md-7 notes">
+                <div class="entete">
+                    <h3>La reproduction humaine</h3>
+                    <a href=""><i class="fas fa-trash-alt"></i></a>
+                </div>
+                <hr>
+                <div id="standalone-container">
+                    <div id="toolbar-container">
+                      <span class="ql-formats">
+                        <select class="ql-font"></select>
+                        <select class="ql-size"></select>
+                      </span>
+                      <span class="ql-formats">
+                        <button class="ql-bold"></button>
+                        <button class="ql-italic"></button>
+                        <button class="ql-underline"></button>
+                        <button class="ql-strike"></button>
+                      </span>
+                      <span class="ql-formats">
+                        <select class="ql-color"></select>
+                        <select class="ql-background"></select>
+                      </span>
+                      <span class="ql-formats">
+                        <button class="ql-script" value="sub"></button>
+                        <button class="ql-script" value="super"></button>
+                      </span>
+                      <span class="ql-formats">
+                        <button class="ql-header" value="1"></button>
+                        <button class="ql-header" value="2"></button>
+                        <button class="ql-blockquote"></button>
+                        <button class="ql-code-block"></button>
+                      </span>
+                      <span class="ql-formats">
+                        <button class="ql-list" value="ordered"></button>
+                        <button class="ql-list" value="bullet"></button>
+                        <button class="ql-indent" value="-1"></button>
+                        <button class="ql-indent" value="+1"></button>
+                      </span>
+                      <span class="ql-formats">
+                        <button class="ql-direction" value="rtl"></button>
+                        <select class="ql-align"></select>
+                      </span>
+                      <span class="ql-formats">
+                        <button class="ql-link"></button>
+                        <button class="ql-image"></button>
+                        <button class="ql-video"></button>
+                        <button class="ql-formula"></button>
+                      </span>
+                      <span class="ql-formats">
+                        <button class="ql-clean"></button>
+                      </span>
+                    </div>
+                    <form id="form" class="formulaire">
+                      <div id="editor-container"></div>
+                            <input type="text" class="form-control mt-3" name="title" id="">
+                            <button class="btn btn-info btn-sm mt-3">Save</button>
+                    </form>
+                </div>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+                <script src="../../assets/js/quill/quill.min.js"></script>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <br>
+        <p>
+            StudArd est un plateforme web pour aider les étudiants à bien gerer ces etudes. <br>
+            Nous avons conçue des fonctionnalités innovant, tel que la gestion d'emploie du temps, les blocs notes, rappel des devoirs.
+        </p>
+        <hr>
+        <p>&copy; Hackaton Inter Universitaire</p>
+    </div>
+
+    <script>
+        function updatePath() {
+            var path = document.getElementById('path');
+            var file = document.getElementById('inputTag');
+            console.log(file.value);
+            path.innerHTML = file.value;
+        }
+
+    window.addEventListener("load", function () {
+        var quill = new Quill('#editor-container', {
+        modules: {
+        formula: true,
+        syntax: true,
+        toolbar: '#toolbar-container'
+        },
+        placeholder: 'Compose an epic...',
+        theme: 'snow'
+    });
+    function procedure(quill) {
+        var xhr; 
+        try {  xhr = new ActiveXObject('Msxml2.XMLHTTP');   }
+        catch (e) 
+        {
+            try {   xhr = new ActiveXObject('Microsoft.XMLHTTP'); }
+            catch (e2) 
+            {
+            try {  xhr = new XMLHttpRequest();  }
+            catch (e3) {  xhr = false;   }
+            }
+        }
+        let inp = document.createElement("input");
+        inp.name = "q"
+        inp.type = "hidden"
+        inp.value = quill.root.innerHTML
+        form.appendChild(inp)
+        var formData = new FormData(form);
+        xhr.onreadystatechange  = function() { 
+            if(xhr.readyState  == 4){
+                if(xhr.status  == 200) {
+                    
+                    }
+                else {
+                    document.dyn="Error code " + xhr.status;
+                }
+            }
+        };
+        xhr.open("POST", "<?php bu('NoteBookD/save')?>",  false); 
+        xhr.send(formData); 
+    }
+    var form = document.getElementById("form");
+    form.addEventListener("submit", function (event) {
+        // event.preventDefault();
+        procedure(quill);
+    });
+});
+    </script>
+    <script src="../../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
