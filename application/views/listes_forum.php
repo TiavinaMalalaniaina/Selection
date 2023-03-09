@@ -17,7 +17,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">StudArd</a>
+            <a class="navbar-brand" href="#"><img src="<?php echo site_url('assets/images/logo-StudArd.png')?>" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -121,6 +121,16 @@
 
             </div>
         </div>
+    </div>
+
+    <div class="footer">
+        <br>
+        <p>
+            StudArd est un plateforme web pour aider les étudiants à bien gerer ces etudes. <br>
+            Nous avons conçue des fonctionnalités innovant, tel que la gestion d'emploie du temps, les blocs notes, rappel des devoirs.
+        </p>
+        <hr>
+        <p>&copy; Hackaton Inter Universitaire</p>
     </div>
 
     <script src="<?php echo site_url('assets/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
