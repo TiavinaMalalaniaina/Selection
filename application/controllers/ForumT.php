@@ -19,7 +19,7 @@ class ForumT extends CI_Controller {
 	}
 
 	public function problemByFiliere() {
-		$idUser = 4;
+		$idUser = $this->session->userdata('iduser');
 		$user = $this->userT_model->getUserById($idUser);
 		$idfiliere = $user['idfiliere'];
 		$problems = $this->forumT_model->getAllProblemByFiliere($idfiliere);
@@ -31,7 +31,7 @@ class ForumT extends CI_Controller {
 	} 
 
 	public function addProblem() {
-		$iduser = 3;
+		$iduser = $this->session->userdata('iduser');
 		$idfiliere = $this->input->post('idfiliere');
 		$problem = $this->input->post('problem');
 		$desc = $this->input->post('desc');
@@ -40,7 +40,7 @@ class ForumT extends CI_Controller {
 	}
 
 	public function addAnswer() {
-		$user = 2;
+		$user = $this->session->userdata('iduser');
 		$response = $this->input->post('response');
 		$idforum_problem = $this->input->post('idforum_problem');
 		$this->forumT_model->saveResponse($user, $idforum_problem, $response);
@@ -61,7 +61,7 @@ class ForumT extends CI_Controller {
 
 	public function vote() {
 		$this->load->model('voteT_model');
-		$iduser = 1;
+		$iduser = $this->session->userdata('iduser');
 		$idforum_response = $this->input->get('idforum_response');
 		$idforum_problem = $this->input->get('idforum_problem');
 		$this->voteT_model->saveVote($idforum_response, $iduser);
