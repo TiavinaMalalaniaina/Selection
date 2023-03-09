@@ -1,0 +1,88 @@
+/* Design du selection hackaton ITU
+
+Couleur mis en jeu
+	- principale : #86BBD8
+	- secondaire : #F8CA5D 
+	- autre : #466060 - #EBC3DB - #EF8275 */
+
+.container {
+    margin-top: 4%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+.desc h3 {
+    color: #86BBD8;
+}
+
+.self label {
+    color: rgb(156, 156, 156);
+    font-size: 14px;
+}
+
+.desc ul {
+    padding: 0;
+    list-style: none;
+    line-height: 35px;
+}
+
+.detail {
+    align-items: center;
+    line-height: 25px;
+    margin-top: 25px;
+}
+
+.detail p {
+    margin: 0;
+}
+
+.detail i {
+    font-size: 20px;
+    color: #466060;
+}
+
+.modif {
+    background-color: #EBC3DB;
+    border: #EBC3DB;
+}
+
+.profil img {
+    width: 90%;
+    height: 80%;
+    border-radius: 10px;
+}
+
+.change {
+    text-decoration: none;
+    color: #EF8275;
+    display: block;
+    margin-top: 5%;
+}
+
+.path {
+    display: inline;
+    margin-left: 80px;
+    color: rgb(96, 143, 143);
+    font-size: 13px !important;
+}
+
+.file {
+    display: none;
+}
+
+.inputTag {
+    height: 100% !important;
+}
+
+.inputTag i {
+    margin-right: 20px;
+}
+
+.fichier label {
+    margin-right: 20px;
+}
+
+.modal-title {
+    color: #EF8275;
+}

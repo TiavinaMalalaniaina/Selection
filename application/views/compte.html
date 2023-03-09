@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/fonts/fontawesome-5/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/compte.css">
+    <title>Mon compte</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 desc">
+                <h3>Ariala Fitia</h3>
+                <div class="row">
+                    <div class="col-md-5 self">
+                        <label for="">Contact</label>
+                        <p>034 32 018 27</p>
+                    </div>
+                    <div class="col-md-5 self">
+                        <label for="">Email</label>
+                        <p>ariala@gmail.com</p>
+                    </div>
+                    <hr>
+                    <div class="col-md-5">
+                        <ul>
+                            <li>
+                                <div class="detail row">
+                                    <div class="col-md-2">
+                                        <i class="fas fa-book"></i>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <label for="">Filière</label>
+                                        <p>Informatique</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="detail row">
+                                    <div class="col-md-2">
+                                        <i class="fas fa-school"></i>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <label for="">Etablissement</label>
+                                        <p>IT University</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="detail row">
+                                    <div class="col-md-2">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <label for="">Niveau d'étude</label>
+                                        <p>BACC +2</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="detail row">
+                                    <div class="col-md-2">
+                                        <i class="fas fa-briefcase"></i>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <label for="">Carrière envisagée</label>
+                                        <p>Informaticien</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="" class="btn btn-warning mt-4 modif">Modifier</a>
+                    </div>
+                    <div class="col-md-6 profil">
+                        <img src="../../assets/images/profil/profil.webp" alt="">
+                        <a href="" class="change" data-bs-toggle="modal" data-bs-target="#exampleModal">Changer photo de profil</a>
+                    </div>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <form action="">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Changer photo de profil</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <label for="" class="form-label">Choisir la photo</label>
+                                        <div class="fichier mt-3">
+                                            <label type="button" for="inputTag" class="btn btn-outline-success inputTag" ><i class="fas fa-plus-circle"></i>Choisir la photo</label>
+                                            <input id="inputTag" type="file" name="userfile" size="20" class="file" onchange="updatePath()">
+                                            <p class="path" id="path"></p>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Modifier</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script>
+        function updatePath() {
+            var path = document.getElementById('path');
+            var file = document.getElementById('inputTag');
+            console.log(file.value);
+            path.innerHTML = file.value;
+        }
+    </script>
+    <script src="../../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
