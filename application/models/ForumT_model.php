@@ -5,7 +5,6 @@
         public function saveProblem($idUser, $idFiliere, $problem, $desc) {
             $query = "INSERT INTO forum_problem(proprietaire, idfiliere, problem, description) VALUES (%s, %s, '%s', '%s')";
             $query = sprintf($query, $idUser, $idFiliere, $problem, $desc);
-            echo $query;
             $this->db->query($query);
         }
         
@@ -45,7 +44,6 @@
             $problems = array();
             $request = "SELECT * FROM forum_problem_detailled WHERE etat!='-1' AND idFiliere=%s";
             $request = sprintf($request, $idFiliere);
-            echo $request;
             $query = $this->db->query($request);
             foreach ($query->result_array() as $row) {
                 $problems[] = $row;    
