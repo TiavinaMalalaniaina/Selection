@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/fonts/fontawesome-5/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/backOffice.css">
+    <title>BackOffice</title>
+</head>
+<body>
+    <div class="container">
+          <!-- Sidebar -->
+            <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+                <div class="position-sticky">
+                    <div class="list-group list-group-flush mx-3 mt-4">
+                        <h4>Gestion filière</h4>
+                        <ul class="liste">
+                            <li>
+                                <div class="fil">
+                                    Medecine <a href=""><i class="fas fa-times"></i></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="fil">
+                                    Informatique <a href=""><i class="fas fa-times"></i></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="fil">
+                                    Mathématique <a href=""><i class="fas fa-times"></i></a>
+                                </div>
+                            </li>
+                        </ul>
+                        <p>
+                            <a href="#" class="new" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample"><i class="fas fa-plus"></i> Nouveau filière</a>
+                        </p>
+                        <div style="min-height: 120px;">
+                            <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                                <div class="card card-body">
+                                    <form action="">
+                                        <label for="" class="form-label">Nom du filière</label>
+                                        <input type="text" name="filiere" class="form form-control">
+                                        <input type="submit" class="btn btn-success btn-sm mt-3">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Sidebar -->
+            <div class="content">
+                <p>Nombre d'utilisateur : <strong>14</strong></p>
+                <h3>Publication forum signaler</h3>
+                <table class="table">
+                    <tr>
+                        <th>id</th>
+                        <th>titre</th>
+                        <th>user</th>
+                        <th>signaler</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                            <td><a href="">2</a></td>
+                            <td>Je deteste ce plateforme ...</td>
+                            <td>Rojo</td>
+                            <td>45</td>
+                            <td><a href=""><i class="fas fa-times"></i></a></td>
+                    </tr>
+                </table>
+            </div>
+
+    </div>
+    <script src="../../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
