@@ -75,6 +75,7 @@ $query_builder = TRUE;
 
 
 $db['default'] = array(
+<<<<<<< Updated upstream
     'dsn'       => '',
     'hostname'  => 'localhost', // replace with the hostname or IP address
     'username'  => 'postgres',
@@ -94,5 +95,26 @@ $db['default'] = array(
     'stricton'  => FALSE,
     'failover'  => array(),
     'save_queries' => TRUE
+=======
+	'dsn'	=> 'pgsql:host=localhost;port=5432;dbname=selection',
+	'hostname' => 'localhost',
+	'username' => 'postgres',
+	'password' => 'dodakely2022',
+	'database' => 'selection',
+	'dbdriver' => 'pdo',
+	'dbprefix' => '',
+	'pconnect' => FALSE,
+	'db_debug' => (ENVIRONMENT !== 'production'),
+	'cache_on' => FALSE,
+	'cachedir' => '',
+	'char_set' => 'utf8',
+	'dbcollat' => 'utf8_general_ci',
+	'swap_pre' => '',
+	'encrypt' => FALSE,
+	'compress' => FALSE,
+	'stricton' => FALSE,
+	'failover' => array(),
+	'save_queries' => TRUE
+>>>>>>> Stashed changes
 );
 

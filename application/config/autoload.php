@@ -58,7 +58,11 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
+<<<<<<< Updated upstream
 $autoload['libraries'] = array('database', 'session');
+=======
+$autoload['libraries'] = array('database','session');
+>>>>>>> Stashed changes
 
 /*
 | -------------------------------------------------------------------
@@ -89,7 +93,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array('format','url');
+$autoload['helper'] = array('format','url','main');
 
 /*
 | -------------------------------------------------------------------

@@ -9,6 +9,7 @@ class ProjetJ_model extends CI_Model {
         $request = sprintf($request, $iduser);
         $query = $this->db->query($request);
         foreach ($query->result_array() as $row) {
+<<<<<<< Updated upstream
             $row['statue'] = $this->getStatus($row['idprojet']);
             $projects[] = $row;    
         }
@@ -26,11 +27,42 @@ class ProjetJ_model extends CI_Model {
         foreach ($query->result_array() as $row) {
             if($row['temppasser'] >= $row['temptotal'])$row['finish'] = true;
             else $row['finish'] = false;
+=======
+            $projects[] = $row;    
+        }
+        return $projects;
+    }
+
+    public function new_projet($iduser, $project_name) {
+        $projects = array();
+        $request = "INSERT INTO projet VALUES(DEFAULT,%s,'%s')";
+        $request = sprintf($request, $iduser, $project_name);
+        $query = $this->db->query($request);
+        return $projects;
+    }
+
+    public function all_tache_projet($idproject) {
+        $taches = array();
+        $request = "SELECT * FROM tache_projet TPr 
+                    JOIN temppasser_tache TPa ON TPr.idproject = TPa.idproject AND TPr.idtache = TPa.idtache
+                    WHERE TPr.idproject = %s";
+        $request = sprintf($request, $idproject);
+        $query = $this->db->query($request);
+        foreach ($query->result_array() as $row) {
+>>>>>>> Stashed changes
             $taches[] = $row;    
         }
         return $taches;
     }
+<<<<<<< Updated upstream
     
+=======
+
+    public function isFinish($taches){
+        return true;
+    }
+
+>>>>>>> Stashed changes
     public function projet_info($idproject) {
         $request = "SELECT * FROM projet P
                     JOIN temprestant_projet TR ON P.idprojet = TR.idprojet
@@ -42,6 +74,7 @@ class ProjetJ_model extends CI_Model {
         }
         return $projet;
     }
+<<<<<<< Updated upstream
     
     public function getLatestProjet(){
         $request = "SELECT * FROM projet ORDER BY idprojet DESC LIMIT 1";
@@ -113,6 +146,10 @@ class ProjetJ_model extends CI_Model {
         $request = sprintf($request, $new_name, $idprojet);
         $query = $this->db->query($request);
     }
+=======
+
+
+>>>>>>> Stashed changes
 }
 
 ?>
