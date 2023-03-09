@@ -119,3 +119,9 @@ table i {
 .new input{
     height: 30px;
 }
+
+.new span, .deconnect i {
+    font-size: 12px;
+    color: #EF8275;
+    margin-bottom: 15%;
+}

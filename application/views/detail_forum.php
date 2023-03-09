@@ -11,9 +11,41 @@
     <link rel="stylesheet" href="<?php echo site_url('assets/fonts/fontawesome-5/css/all.min.css') ?>">
     <script src="<?php echo site_url('assets/js/detail_forum.js') ?>"></script>
     <link rel="stylesheet" href="<?php echo site_url('assets/css/detail_forum.css') ?>">
+    <link rel="stylesheet" href="<?php echo site_url('assets/css/header.css') ?>../../">
     <title>Detail forum</title>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">StudArd</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-flex liens" id="navbarNav">
+                <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Emploie du temps</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">Forum</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Projet</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Mon compte</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link deconnect" href="#"><i class="fas fa-power-off"></i></a>
+                </li>
+                </ul>
+          </div>
+        </div>
+    </nav>
+
     <div class="container">
         <div class="question row">
             <div class="col-md-2 col-2 image">

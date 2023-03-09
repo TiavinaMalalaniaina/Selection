@@ -1,0 +1,36 @@
+.navbar {
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: #86BBD8 !important;
+}
+
+.navbar-brand {
+    color: white !important;
+}
+
+.navbar-brand img {
+    width: 50px;
+    height: 50px;
+}
+
+.nav-item {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.liens {
+    margin-left: 40%;
+}
+
+.liens a {
+    color: #466060;
+}
+
+.deconnect {
+    color: beige !important;
+    transition: .3s;
+}
+
+.deconnect:hover {
+    color: #F8CA5D  !important;
+}
