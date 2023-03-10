@@ -33,6 +33,9 @@
                     <a class="nav-link" href="#">Projet</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="#">Mes Notes</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#">Mon compte</a>
                 </li>
                 <li class="nav-item">

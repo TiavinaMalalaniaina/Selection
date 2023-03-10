@@ -94,7 +94,5 @@
             return $query->row_array();
         }
 
-        
-        
     }
 ?>

@@ -1,0 +1,56 @@
+/* Design du selection hackaton ITU
+
+Couleur mis en jeu
+	- principale : #86BBD8
+	- secondaire : #F8CA5D 
+	- autre : #466060 - #EBC3DB - #EF8275 */
+
+.container {
+    margin-top: 2%;
+}
+
+.listes h3 {
+    color: #EF8275 ;
+    font-size: 23px;
+    margin-bottom: 3%;
+}
+
+.entete {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.notes {
+    margin-top: 3%;
+}
+
+.entete h3 {
+    color: #466060;
+    font-size: 19px;
+}
+
+.entete i {
+    color: #EF8275;
+}
+
+.entete i:hover {
+    color: #eb4e3d;
+}
+
+body > #standalone-container {
+    margin: 50px auto;
+    max-width: 720px;
+  }
+
+#editor-container {
+height: 350px;
+}
+
+.formulaire input {
+    width: 50%;
+}
+
+.formulaire button {
+    width: 30%;
+}
