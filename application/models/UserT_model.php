@@ -24,6 +24,43 @@
             } 
             return 'username';
         }
-        
+        public function getform(){
+            $i = 0;
+            $carrieres = [];
+            $sql = $this->db->query("select * from carriere");
+            foreach ($sql->result_array() as $row){
+                $carrieres[$i][0] = $row['idcarriere'];
+                $carrieres[$i][1] = $row['valeur'];
+                $i++;
+            }
+            $i = 0;
+            $filieres = [];
+            $sql = $this->db->query("select * from filiere");
+            foreach ($sql->result_array() as $row){
+                $filieres[$i][0] = $row['idfiliere'];
+                $filieres[$i][1] = $row['valeur'];
+                $i++;
+            }$i = 0;
+            $niveaus = [];
+            $sql = $this->db->query("select * from niveauetude");
+            foreach ($sql->result_array() as $row){
+                $niveaus[$i][0] = $row['idniveauetude'];
+                $niveaus[$i][1] = $row['valeur'];
+                $i++;
+            }$i = 0;
+            $etab = [];
+            $sql = $this->db->query("select * from etablissement");
+            foreach ($sql->result_array() as $row){
+                $etab[$i][0] = $row['id'];
+                $etab[$i][1] = $row['nom'];
+                $i++;
+            }
+            $data = [];
+            $data['fil'] = $filieres;
+            $data['etab'] = $etab;
+            $data['niv'] = $niveaus;
+            $data['car'] = $carrieres;
+            return $data;
+        }
     }
 ?>

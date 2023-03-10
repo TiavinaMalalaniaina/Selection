@@ -24,7 +24,7 @@
                     <i class="fas fa-lock"></i>
                     <input type="password" class="form-control"  placeholder="Votre mot de passe" name="password">
                 </div>
-                <p><a href="">Voulez-vous vous inscrire ?</a></p>
+                <p><a href="<?php bu('LogT/signuper1')?>">Voulez-vous vous inscrire ?</a></p>
                 <button type="submit" class="btn btn-info mt-2 connexion">Connexion</button>
             </form>
         </div>
