@@ -2,7 +2,6 @@
     if(!defined('BASEPATH')) exit('No direct script access allowed');
     class ForumT_model extends CI_Model {
         
-<<<<<<< Updated upstream
         public function saveProblem($idUser, $idFiliere, $problem, $desc) {
             $query = "INSERT INTO forum_problem(proprietaire, idfiliere, problem, description) VALUES (%s, %s, '%s', '%s')";
             $query = sprintf($query, $idUser, $idFiliere, $problem, $desc);
@@ -85,12 +84,5 @@
 
         
         
-=======
-
-        public function getDetail_problem($idforum_problem) {
-            $request = "SELECT * FROM forum_response ";
-        }
-
->>>>>>> Stashed changes
     }
 ?>

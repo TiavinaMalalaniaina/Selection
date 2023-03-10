@@ -16,7 +16,7 @@
                 <div class="listes-projet">
 
                     <?php foreach ($all_projet as $_projet){ ?>
-                    <a href="<?php echo base_url(); ?>ProjetJ/filtre/<?php echo $_projet['idprojet']; ?>" class="list-group-item list-group-item-action">
+                    <a href="<?php bu('ProjetJ/filtre/'.$_projet['idprojet']); ?>" class="list-group-item list-group-item-action">
                         <div class="row">
                             <div class="col-md-6 titre">
                                 <?php echo $_projet['nom']; ?>

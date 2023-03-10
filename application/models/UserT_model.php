@@ -10,7 +10,7 @@
         }
 
         public function getUserById($idUser) {
-            $request = 'SELECT * FROM user_detailled WHERE idUser=%s';
+            $request = 'SELECT * FROM user_detailled WHERE iduser=%d';
             $request = sprintf($request, $idUser);
             $query = $this->db->query($request);
             $user = $query->row_array();
@@ -23,7 +23,7 @@
             $query = $this->db->query($request);
             if ($query->result_array()) {
                 $user = $query->row_array(); 
-                if ($user['mdp'] == $mdp) {
+                if ($user['password'] == $mdp) {
                     return $user;
                 } else {
                     return 'password';
@@ -34,6 +34,7 @@
 
         public function logout() {
             $this->session->unset_userdata('iduser');
+            $this->session->sess_destroy();
         }
 
         public function checkUser() {

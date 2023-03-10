@@ -11,11 +11,13 @@ class Welcome extends CI_Controller {
 	public function index() {
 		$idUser = $this->session->userdata('iduser');
 		$this->load->model('todoT_model');
+		$this->load->model('projetJ_model');
 		$todo = $this->todoT_model->findByUser($idUser);
+		$recentProject = $this->projetJ_model->recent_project($idUser, 4);
 		$data = array(
-			'todo' => $todo
+			'todo' => $todo,
+			'projets' => $recentProject
 		);
-
 		$this->load->view('accueil', $data);
 	}
 }

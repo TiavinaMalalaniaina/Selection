@@ -71,6 +71,7 @@
             </div>
 
     </div>
-    <script src="<?php echo site_url('assets/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
-</body>
-</html>
+
+<!-- FOOTER -->
+<?php $this->load->view("templates/footer") ?>
+<!-- FOOTER -->

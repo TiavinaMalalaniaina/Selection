@@ -24,7 +24,7 @@ class LogT extends CI_Controller {
 
     public function logout() {
         $this->userT_model->logout();
-        redirect(site_url('logT'));
+        redirect('LogT');
     }
 	
 }

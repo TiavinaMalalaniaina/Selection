@@ -5,7 +5,7 @@ class ProjetJ_model extends CI_Model {
 
     public function all_projet($iduser) {
         $projects = array();
-        $request = "SELECT * FROM projet WHERE iduser=%s";
+        $request = "SELECT * FROM projet WHERE iduser=%d";
         $request = sprintf($request, $iduser);
         $query = $this->db->query($request);
         foreach ($query->result_array() as $row) {
@@ -13,7 +13,20 @@ class ProjetJ_model extends CI_Model {
             $projects[] = $row;    
         }
         return $projects;
-    } 
+    }
+    
+    
+    public function recent_project($iduser, $max) {
+        $projects = array();
+        $request = "SELECT * FROM projet WHERE iduser=%d ORDER BY idprojet DESC LIMIT %d";
+        $request = sprintf($request, $iduser, $max);
+        $query = $this->db->query($request);
+        foreach ($query->result_array() as $row) {
+            $row['statue'] = $this->getStatus($row['idprojet']);
+            $projects[] = $row;    
+        }
+        return $projects;
+    }
     
     public function all_tache_projet($idproject) {
         $taches = array();

@@ -6,19 +6,13 @@ class ForumT extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('forumT_model');
-<<<<<<< Updated upstream
 		$this->load->model('userT_model');
 		$this->load->helpers('date_helper');
 		if (!$this->userT_model->checkUser()) redirect('logT/');
 	}
-	
-=======
-	}
-
->>>>>>> Stashed changes
 
 	public function index() {
-		$this->load->view('welcome_message');
+		redirect('forumT/problemByFiliere');
 	}
 
 	public function search() {
@@ -34,7 +28,6 @@ class ForumT extends CI_Controller {
 		$this->load->view('listes_forum', $data);
 	}
 
-<<<<<<< Updated upstream
 	public function problemByFiliere() {
 		$idUser = $this->session->userdata('iduser');
 		$user = $this->userT_model->getUserById($idUser);
@@ -62,41 +55,10 @@ class ForumT extends CI_Controller {
 		$idforum_problem = $this->input->post('idforum_problem');
 		$this->forumT_model->saveResponse($user, $idforum_problem, $response);
 		redirect(site_url('ForumT/detail_forum?idforum_problem='.$idforum_problem));
-=======
-	public function allProblem() {
-		$problems = $this->forumT_model->getAllNonResolveProblem();
-		$data = array(
-			'problems' => $problems
-		);
-		$this->load->view('problem.php', $data);
-	} 
-
-	public function addProblem() {
-		// $user = $this->session->userdata('iduser');
-		// $problem = $this->input->post('problem');
-		// $idfiliere = $this->input->post('idfiliere');
-
-		$user = 1;
-		$problem = "Andry Rajoelina";
-		$idfiliere = 2;
-
-		$this->forumT_model->saveProblem($user, $idfiliere, $problem);
-
-		redirect(site_url('ForumT/allProblem'));
-	}
-
-	public function addAnswer() {
-		$user = 2;
-		$response = 'Marc Ravalo';
-		$idforum_problem = 3;
-		$this->forumT_model->saveResponse($user, $idforum_problem, $response);
-
->>>>>>> Stashed changes
 	}
 
 	public function detail_forum() {
 		// $idforum_problem = $this->input->post('idproblem');
-<<<<<<< Updated upstream
 		$idforum_problem = $this->input->get('idforum_problem');
 		$problem = $this->forumT_model->getProblemByIdForumProblem($idforum_problem);
 		$response = $this->forumT_model->getresponseByIdForumProblem($idforum_problem);
@@ -127,18 +89,5 @@ class ForumT extends CI_Controller {
 		$this->forumT_model->setEtatProblem($idforum_problem, -1);
 	}
 
-=======
-		$idforum_problem = 1;
-		$problem = $this->forumT_model->getProblemByIdForumProblem($idforum_problem);
-		$response = $this->forumT_model->getresponseByIdForumProblem($idforum_problem);
-		$a = array(
-			'problem' => array ($problem, $response)
-		);
-		$data = array(
-			'problems' => $response
-		);
-		$this->load->view('problem.php', $data);
-	}
->>>>>>> Stashed changes
 	
 }

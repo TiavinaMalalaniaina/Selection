@@ -5,11 +5,12 @@ class ProjetJ extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
+        if (!$this->userT_model->checkUser()) redirect('logT/');
 		$this->load->model('ProjetJ_model');
 	}
 
     public function index() {
-        $iduser = 1;
+        $iduser = $this->session->userdata('iduser');
         $latest_projet = $this->ProjetJ_model->getLatestProjet();
         $data = array(
             "all_projet" => $this->ProjetJ_model->all_projet($iduser),
@@ -20,7 +21,7 @@ class ProjetJ extends CI_Controller {
 	}
 
     public function filtre($idprojet) {
-        $iduser = 1;
+        $iduser = $this->session->userdata('iduser');
         $data = array(
             "all_projet" => $this->ProjetJ_model->all_projet($iduser),
             "projet" => $this->ProjetJ_model->getProjetById($idprojet),
@@ -30,7 +31,7 @@ class ProjetJ extends CI_Controller {
 	}
 
     public function new_projet() {
-        $iduser = 1;
+        $iduser = $this->session->userdata('iduser');
         $project_name = $this->input->post('nom');
         $deadline = $this->input->post('deadline');
         $deadline = str_replace("T", " ", $deadline).":00";

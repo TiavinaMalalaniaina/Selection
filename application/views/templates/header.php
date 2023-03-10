@@ -20,25 +20,25 @@
             <div class="collapse navbar-collapse d-flex liens" id="navbarNav">
                 <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Accueil</a>
+                    <a class="nav-link" aria-current="page" href="<?php bu ('welcome'); ?>">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Emploie du temps</a>
+                    <a class="nav-link" href="<?php bu ('timeTableD'); ?>">Emploie du temps</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link">Forum</a>
+                    <a class="nav-link" href="<?php bu ('forumT'); ?>">Forum</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Projet</a>
+                    <a class="nav-link" href="<?php bu ('projetJ'); ?>">Projet</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Mes Notes</a>
+                    <a class="nav-link" href="<?php bu ('noteBookD'); ?>">Mes Notes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Mon compte</a>
+                    <a class="nav-link" href="">Mon compte</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link deconnect" href="#"><i class="fas fa-power-off"></i></a>
+                    <a class="nav-link deconnect" href="<?php bu ('logT'); ?>"><i class="fas fa-power-off"></i></a>
                 </li>
                 </ul>
           </div>

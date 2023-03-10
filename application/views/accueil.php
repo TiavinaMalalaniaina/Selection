@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?php echo site_url('assets/bootstrap/css/bootstrap.min.css') ?>">
-    <link rel="stylesheet" href="<?php echo site_url('assets/fonts/fontawesome-5/css/all.min.css') ?>">
-    <script src="<?php echo site_url('assets/js/emploie_du_temps_util.js') ?>"></script>
-    <script src='<?php echo site_url('assets/js/fullcalendar-6.1.4/dist/index.global.js') ?>'></script>
-    <link rel="stylesheet" href="<?php echo site_url('assets/css/accueil.css') ?>">
-    <title>Login</title>
-</head>
-<body>
+<!-- IMPORTATION -->    
+<script src="<?php echo site_url('assets/js/emploie_du_temps_util.js') ?>"></script>
+<script src='<?php echo site_url('assets/js/fullcalendar-6.1.4/dist/index.global.js') ?>'></script>
+<link rel="stylesheet" href="<?php echo site_url('assets/css/accueil.css') ?>">
+<title>Login</title>
+<!-- IMPORTATION -->
+
+<!-- HEADER -->
+<?php $this->load->view("templates/header") ?>
+<!-- HEADER -->
     <div class="container">
         <div class="row">
             <div class="col-md-8">
@@ -90,9 +86,9 @@
                 <div class="projet">
                     <h4>Vos projet recents</h4>
                     <ul>
-                        <li><a href="" class="btn btn-info">Projet Mr Tahina</a></li>
-                        <li><a href="" class="btn btn-info">Réalisation hackaton IU</a></li>
-                        <li><a href="" class="btn btn-info">Projet Madame Baovola</a></li>
+                        <?php foreach($projets as $projet){ ?>
+                        <li><a href="<?php bu('ProjetJ/filtre/'.$projet['idprojet']); ?>" class="btn btn-info"><?php echo $projet['nom']; ?></a></li>
+                        <?php } ?>
                     </ul>
                 </div>
 
@@ -127,6 +123,7 @@
             path.innerHTML = file.value;
         }
     </script>
-    <script src="<?php echo site_url('assets/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
-</body>
-</html>
+    
+<!-- FOOTER -->
+<?php $this->load->view("templates/footer") ?>
+<!-- FOOTER -->

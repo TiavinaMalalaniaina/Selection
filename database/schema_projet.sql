@@ -1,28 +1,25 @@
-DROP TABLE projet;
-DROP TABLE tache_projet CASCADE;
-DROP TABLE tache_status CASCADE;
-
 CREATE  TABLE "public".projet ( 
 	idprojet             serial  NOT NULL  ,
-	iduser               integer  NOT NULL  ,
+	iduser               integer  ,
 	nom                  varchar(50)    ,
 	deadline             timestamp  NOT NULL,
-	CONSTRAINT pk_projet PRIMARY KEY ( idprojet )
- );
+	CONSTRAINT pk_projet PRIMARY KEY ( idprojet ),
+	CONSTRAINT fk_projet FOREIGN KEY ( iduser ) REFERENCES "public"."user"(iduser)
+);
 
 CREATE  TABLE "public".tache_projet ( 
 	idprojet             integer  NOT NULL  ,
 	idtache              serial  NOT NULL  ,
 	nom                  varchar(50)    ,
 	temptotal            integer DEFAULT 0,
-	CONSTRAINT fk_tache_projet FOREIGN KEY ( idprojet ) REFERENCES projet ( idprojet )  
- );
+	CONSTRAINT fk_tache_projet FOREIGN KEY ( idprojet ) REFERENCES projet ( idprojet ) ON DELETE CASCADE 
+);
 
 CREATE  TABLE "public".tache_status ( 
 	idprojet             integer  NOT NULL  ,
 	idtache              integer  NOT NULL  ,
 	temppasser           integer DEFAULT 0  ,
-	CONSTRAINT fk_tache_status FOREIGN KEY ( idprojet ) REFERENCES projet ( idprojet ) 
+	CONSTRAINT fk_tache_status FOREIGN KEY ( idprojet ) REFERENCES projet ( idprojet )
  );
 
 
