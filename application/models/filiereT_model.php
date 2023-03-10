@@ -14,5 +14,15 @@
             $this->db->query($query);
         }     
 
+        public function getAll() {
+            $filiere = [];
+            $request = "SELECT * FROM filiere";
+            $query = $this->db->query($request);
+            foreach ($query->result_array() as $row) {
+                $filiere[] = $row;    
+            }
+            return $filiere;
+        }
+
     }
 ?>
