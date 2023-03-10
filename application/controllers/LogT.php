@@ -49,8 +49,13 @@ class LogT extends CI_Controller {
         $this->session->set_userdata("contact",$this->input->get("contact"));
         $this->session->set_userdata("email",$this->input->get("email"));
         $this->session->set_userdata("mdp",$this->input->get("mdp"));
+        if($this->input->get("mdp")!==$this->input->get("mdp2")){
+            redirect('LogT/signuper1');
+        }
+        else {
         $data = $this->userT_model->getform();
         $this->load->view("inscription2",$data);
+        }
     }
     public function signuper3(){
         $data['nom'] = $this->session->userdata("nom");
@@ -64,6 +69,7 @@ class LogT extends CI_Controller {
         $row = $query->row_array();
         $id =  $row['m'];
         $this->db->query("insert into \"public\".detailuser(iduser,idfiliere,idniveauetude,idcarriere,idetablissement,specialite) values(".$id.",".$this->input->get("fil").",".$this->input->get("niv").",".$this->input->get("car").",".$this->input->get("etab").",'".$this->input->get("specialite")."')");
+        $this->session->sess_destroy();
         redirect('LogT/index');
     }
 }
