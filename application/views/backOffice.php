@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../assets/fonts/fontawesome-5/css/all.min.css">
-    <link rel="stylesheet" href="../../assets/css/backOffice.css">
+    <link rel="stylesheet" href="<?php echo site_url('assets/bootstrap/css/bootstrap.min.css') ?>">
+    <link rel="stylesheet" href="<?php echo site_url('assets/fonts/fontawesome-5/css/all.min.css') ?>">
+    <link rel="stylesheet" href="<?php echo site_url('assets/css/backOffice.css') ?>">
     <title>Admin page</title>
 </head>
 <body>
@@ -21,30 +21,22 @@
                         </p>
                         <h4>Gestion filière</h4>
                         <ul class="liste">
+                            <?php foreach ($filieres as $filiere) { ?>
                             <li>
                                 <div class="fil">
-                                    Medecine <a href=""><i class="fas fa-times"></i></a>
+                                    <?php echo $filiere['valeur'] ?> <a href=""><i class="fas fa-times"></i></a>
                                 </div>
                             </li>
-                            <li>
-                                <div class="fil">
-                                    Informatique <a href=""><i class="fas fa-times"></i></a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="fil">
-                                    Mathématique <a href=""><i class="fas fa-times"></i></a>
-                                </div>
-                            </li>
+                            <?php } ?>
                         </ul>
                         <p>
-                            <a href="#" class="new" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample"><i class="fas fa-plus"></i> Nouveau filière</a>
+                            <a href="" class="new" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample"><i class="fas fa-plus"></i> Nouveau filière</a>
                         </p>
                         <div style="min-height: 120px;">
                             <div class="collapse collapse-horizontal" id="collapseWidthExample">
                                 <div class="card card-body">
-                                    <form action="">
-                                        <label for="" class="form-label">Nom du filière</label>
+                                    <form action="<?php echo site_url('backT/addFiliere') ?>" method="post">
+                                        <label for="" class="form-label">Nom de la filière</label>
                                         <input type="text" name="filiere" class="form form-control">
                                         <input type="submit" class="btn btn-success btn-sm mt-3">
                                     </form>
@@ -56,7 +48,7 @@
             </nav>
             <!-- Sidebar -->
             <div class="content">
-                <p>Nombre d'utilisateur : <strong>14</strong></p>
+                <p>Nombre d'utilisateur : <strong><?php echo $number ?></strong></p>
                 <h3>Publication forum signaler</h3>
                 <table class="table">
                     <tr>
@@ -66,17 +58,19 @@
                         <th>signaler</th>
                         <th></th>
                     </tr>
-                    <tr>
-                            <td><a href="">2</a></td>
-                            <td>Je deteste ce plateforme ...</td>
-                            <td>Rojo</td>
-                            <td>45</td>
-                            <td><a href=""><i class="fas fa-times"></i></a></td>
-                    </tr>
+                    <?php foreach ($problems as $problem) { ?>
+                        <tr>
+                            <td><a href="<?php echo site_url('ForumT/detail_forum?idforum_problem='.$problem['idforum_problem']) ?>"><?php echo $problem['signal'] ?></a></td>
+                            <td><?php echo $problem['problem'] ?></td>
+                            <td><?php echo $problem['nom'] ?></td>
+                            <td><?php echo $problem['signal'] ?></td>
+                            <td><a href="<?php echo site_url('BackT/drop?idforum_problem='.$problem['idforum_problem']); ?>"><i class="fas fa-times"></i></a></td>
+                        </tr>
+                    <?php } ?>
                 </table>
             </div>
 
     </div>
-    <script src="../../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo site_url('assets/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 </body>
 </html>

@@ -4,8 +4,8 @@
         
         public function save($idUser, $tache) {
         
-            $request = "INSERT INTO \"public\".todo( idtodo, iduser, tache, date_tache, etat) VALUES ( default, %s, '%s', default, default )";
-            $request = sprintf($request, $idUser, $tache);
+            $request = "INSERT INTO \"public\".todo( idtodo, iduser, tache, date_tache, etat) VALUES ( default, %s, %s, default, default )";
+            $request = sprintf($request, $idUser, $this->db->escape($tache));
             $this->db->query($request);
         
         }
@@ -14,7 +14,7 @@
         public function findByUser($idUser) {
 
             $todo = [];
-            $request = "SELECT idtodo,iduser,tache,date_tache,etat FROM todo WHERE iduser=%s AND etat=0";
+            $request = "SELECT idtodo,iduser,tache,date_tache,etat FROM todo WHERE iduser=%s AND etat=0 ORDER BY date_tache desc LIMIT 5";
             $request = sprintf($request, $idUser);
             $query = $this->db->query($request);
             foreach ($query->result_array() as $row) {

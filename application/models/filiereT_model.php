@@ -12,17 +12,17 @@
             $query = "UPDATE filiere SET valeur='%s' WHERE idfiliere=%s";
             $query = sprintf($query, $filiere, $idfiliere);
             $this->db->query($query);
-<<<<<<< Updated upstream
         }     
-=======
-        }
 
-        public function get() {
-            return 'filie;'
+        public function getAll() {
+            $filiere = [];
+            $request = "SELECT * FROM filiere";
+            $query = $this->db->query($request);
+            foreach ($query->result_array() as $row) {
+                $filiere[] = $row;    
+            }
+            return $filiere;
         }
-        
-        
->>>>>>> Stashed changes
 
     }
 ?>

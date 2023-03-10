@@ -1,17 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?php bu('assets/bootstrap/css/bootstrap.min.css')?>">
-    <link rel="stylesheet" href="<?php bu('assets/fonts/fontawesome-5/css/all.min.css')?>">
-    <script src="<?php bu('assets/js/emploie_du_temps_util.js')?>"></script>
-    <script src='<?php bu('assets/js/fullcalendar-6.1.4/dist/index.global.js')?>'></script>
-    <link rel="stylesheet" href="<?php bu('assets/css/emploie_du_temps.css')?>">
-    <title>Gestion d'emploie du temps</title>
-</head>
-<body>
+<!-- IMPORTATION -->
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/gestion_projet.css">
+<script src="<?php echo base_url(); ?>assets/js/gestion_projet.js"></script>
+<script src="<?php bu('assets/js/emploie_du_temps_util.js')?>"></script>
+<script src='<?php bu('assets/js/fullcalendar-6.1.4/dist/index.global.js')?>'></script>
+<link rel="stylesheet" href="<?php bu('assets/css/emploie_du_temps.css')?>">
+<title>Gestion d'emploie du temps</title>
+<!-- IMPORTATION -->
+
+<!-- HEADER -->
+<?php $this->load->view("templates/header") ?>
+<!-- HEADER -->
+
     <div class="container">
         <h1 class="titre mb-3">Gestion d'emploie du temps</h1>
         <div class="rappel">
@@ -83,7 +82,6 @@
             </div>
         </div>
     </div>
-    <script src="<?php bu('assets/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
     <script src="<?php bu('assets/js/emploie_du_temps.js')?>"></script>
     <script>
         window.addEventListener("load", function () {
@@ -123,5 +121,7 @@
             xhr.send(null);   
         })
     </script>
-</body>
-</html>
+
+<!-- FOOTER -->
+<?php $this->load->view("templates/footer") ?>
+<!-- FOOTER -->

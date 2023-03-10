@@ -31,3 +31,8 @@ application/config/database.php
 database/schema_projet.sql
 application/config/config.php
 application/config/database.php
+application/config/config.php
+application/config/config.php
+application/config/database.php
+application/models/filiereT_model.php
+application/models/ForumT_model.php

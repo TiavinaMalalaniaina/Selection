@@ -2,6 +2,13 @@
     if(!defined('BASEPATH')) exit('No direct script access allowed');
     class UserT_model extends CI_Model {
         
+        public function countUser() {
+            $request = 'SELECT count(*) nbr FROM "user"';
+            $query = $this->db->query($request);
+            $user = $query->row_array();
+            return $user['nbr'];
+        }
+
         public function getUserById($idUser) {
             $request = 'SELECT * FROM user_detailled WHERE idUser=%s';
             $request = sprintf($request, $idUser);
@@ -62,5 +69,15 @@
             $data['car'] = $carrieres;
             return $data;
         }
+
+        public function logout() {
+            $this->session->unset_userdata('iduser');
+        }
+
+        public function checkUser() {
+            if (!$this->session->has_userdata('iduser')) return false;
+            return true;
+        }
+        
     }
 ?>
