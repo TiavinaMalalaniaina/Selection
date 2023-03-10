@@ -30,6 +30,10 @@
                     <input type="text" class="form-control" name="contact" placeholder="Votre contact" value="<?php echo $contact?>" required>
                 </div>
                 <div class="equipe mt-4">
+                    <i class="fas fa-phone"></i>
+                    <input type="date" class="form-control" name="dtn" placeholder="Date de naissance">
+                </div>
+                <div class="equipe mt-4">
                     <i class="fas fa-envelope"></i>
                     <input type="email" class="form-control" name="email" placeholder="Votre email" value="<?php echo $email?>" required>
                 </div>

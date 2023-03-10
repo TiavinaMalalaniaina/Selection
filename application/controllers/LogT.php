@@ -48,6 +48,7 @@ class LogT extends CI_Controller {
         $this->session->set_userdata("prenom",$this->input->get("prenom"));
         $this->session->set_userdata("contact",$this->input->get("contact"));
         $this->session->set_userdata("email",$this->input->get("email"));
+        $this->session->set_userdata("dtn",$this->input->get("dtn"));
         $this->session->set_userdata("mdp",$this->input->get("mdp"));
         if($this->input->get("mdp")!==$this->input->get("mdp2")){
             redirect('LogT/signuper1');
@@ -63,7 +64,8 @@ class LogT extends CI_Controller {
         $data['contact'] = $this->session->userdata("contact");
         $data['email'] = $this->session->userdata("email");
         $data['mdp'] = $this->session->userdata("mdp");
-        $this->db->query("INSERT INTO \"public\".\"user\"(nom, prenom, contact, email, \"password\" ) VALUES ('".$data['nom']."', '".$data['prenom']."','".$data['contact']."', '".$data['email']."', '".$data['mdp']."')");
+        $data['dtn'] = $this->session->userdata("dtn");
+        $this->db->query("INSERT INTO \"public\".\"user\"(nom, prenom, contact, email, \"password\",dtn ) VALUES ('".$data['nom']."', '".$data['prenom']."','".$data['contact']."', '".$data['email']."', '".$data['mdp']."','".$data['dtn']."')");
         $req = " select max(iduser) as m from \"public\".\"user\"";
         $query = $this->db->query($req);
         $row = $query->row_array();

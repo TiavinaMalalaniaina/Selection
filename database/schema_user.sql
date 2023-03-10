@@ -47,6 +47,7 @@ CREATE  TABLE "public"."user" (
 	contact 			 varchar(30),
 	email                varchar(20)    ,
 	"password"           varchar(20)    ,
+	DATENAME			 DATE,
 	CONSTRAINT pk_tbl PRIMARY KEY ( iduser )
  );
 
@@ -94,9 +95,3 @@ INSERT INTO "public".niveauetude( idniveauetude, valeur ) VALUES ( 8, 'DOCTORAT'
 insert into etablissement(nom) values('IT University');
 insert into etablissement(nom) values('DEGS Ankatso');
 insert into etablissement(nom) values('ESPA Vontovorona');
-INSERT INTO "public"."user"( iduser, nom, prenom, contact, email, "password" ) VALUES ( 1, 'Tiavina', 'Malalaniaina','0326470822', 'tiavina@gmail.com', 'tiavina');
-INSERT INTO "public"."user"( iduser, nom, prenom, contact, email, "password" ) VALUES ( 2, 'Doda', 'Kely','0326470822', 'doda@gmail.com', 'doda');
-INSERT INTO "public"."user"( iduser, nom, prenom, contact, email, "password" ) VALUES ( 3, 'To', 'Mamiarilaza','0326470822', 'to@gmail.com', 'to');
-INSERT INTO "public"."user"( iduser, nom, prenom, contact, email, "password" ) VALUES ( 4, 'Johan', 'Anjaratiana','0326470822', 'johan@gmail.com', 'johan');
-INSERT INTO "public"."user"( iduser, nom, prenom, contact, email, "password" ) VALUES ( 5, 'Domoina', 'Rakotodratsima','0326470822', 'domoina@gmail.com', 'domoina');
-
