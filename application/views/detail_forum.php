@@ -1,6 +1,3 @@
-<?php echo var_dump($problems) ?>
-<?php echo var_dump($responses) ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +8,7 @@
     <link rel="stylesheet" href="<?php echo site_url('assets/fonts/fontawesome-5/css/all.min.css') ?>">
     <script src="<?php echo site_url('assets/js/detail_forum.js') ?>"></script>
     <link rel="stylesheet" href="<?php echo site_url('assets/css/detail_forum.css') ?>">
-    <link rel="stylesheet" href="<?php echo site_url('assets/css/header.css') ?>../../">
+    <link rel="stylesheet" href="<?php echo site_url('assets/css/header.css') ?>">
     <title>Detail forum</title>
 </head>
 <body>

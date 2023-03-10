@@ -1,6 +1,3 @@
-<?php
-    echo var_dump($problems);
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +21,7 @@
             <div class="collapse navbar-collapse d-flex liens" id="navbarNav">
                 <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Accueil</a>
+                    <a class="nav-link" aria-current="page" href="<?php echo site_url('welcome') ?>">Accueil</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Emploie du temps</a>
@@ -88,10 +85,10 @@
             </div>
             
             <div class="recherche mt-3">
-                <form action="" method="POST">
+                <form action="<?php echo site_url('ForumT/search') ?>" method="POST">
                     <div class="row">
                         <div class="col-md-6 champ">
-                            <input type="text" name="mot" class="form-control finder" placeholder="Recherche discussion">
+                            <input type="text" name="text" class="form-control finder" placeholder="Recherche discussion">
                         </div>
                         <div class="col-md-6 champ">
                             <button type="submit" class="btn btn-info"><i class="fas fa-search mx-2"></i> Rechercher</button>
