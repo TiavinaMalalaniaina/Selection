@@ -8,10 +8,7 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/fonts/fontawesome-5/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/js/loadingBar/dist/loading-bar.min.css"/>
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/loadingBar/dist/loading-bar.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/js/gestion_projet.js"></script>
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/header.css">
-
-    <title>Gestion de projet</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">

@@ -1,63 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?php bu('assets/bootstrap/css/bootstrap.min.css')?>">
-    <link rel="stylesheet" href="<?php bu('assets/fonts/fontawesome-5/css/all.min.css')?>">
-    <link rel="stylesheet" href="<?php bu('assets/css/blocNote.css')?>">
-    <link rel="stylesheet" href="<?php bu('assets/css/header.css')?>">
-    <meta name="language" content="english">
-    <meta name="viewport" content="width=device-width">
-    <meta name="twitter:description" content="Quill is a free, open source rich text editor built for the modern web.">
-    <meta name="twitter:image" content="https://quilljs.com/assets/images/brand-asset.png">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://quilljs.com/standalone/full/">
-    <meta property="og:image" content="https://quilljs.com/assets/images/brand-asset.png">
-    <meta property="og:title" content="Full Editor - Quill">
-    <meta property="og:site_name" content="Quill">
-    <link rel="canonical" href="https://quilljs.com/standalone/full/">
-    <link type="application/atom+xml" rel="alternate" href="https://quilljs.com/feed.xml" title="Quill - Your powerful rich text editor" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css" />
-    <link rel="stylesheet" href="<?php bu('assets/js/quill/quill.snow.css')?>" />
-    <title>Vos notes</title>
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="../../assets/images/logo-StudArd.png" alt=""></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse d-flex liens" id="navbarNav">
-                <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Accueil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Emploie du temps</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link">Forum</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Projet</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Mes Notes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Mon compte</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link deconnect" href="#"><i class="fas fa-power-off"></i></a>
-                </li>
-                </ul>
-          </div>
-        </div>
-    </nav>
+<!-- IMPORTATION -->
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/gestion_projet.css">
+<link rel="stylesheet" href="<?php bu('assets/css/blocNote.css')?>">
+<meta name="language" content="english">
+<meta name="viewport" content="width=device-width">
+<meta name="twitter:description" content="Quill is a free, open source rich text editor built for the modern web.">
+<meta name="twitter:image" content="https://quilljs.com/assets/images/brand-asset.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://quilljs.com/standalone/full/">
+<meta property="og:image" content="https://quilljs.com/assets/images/brand-asset.png">
+<meta property="og:title" content="Full Editor - Quill">
+<meta property="og:site_name" content="Quill">
+<link rel="canonical" href="https://quilljs.com/standalone/full/">
+<link type="application/atom+xml" rel="alternate" href="https://quilljs.com/feed.xml" title="Quill - Your powerful rich text editor" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css" />
+<link rel="stylesheet" href="<?php bu('assets/js/quill/quill.snow.css')?>" />
+<title>Vos notes</title>
+<!-- IMPORTATION -->
+
+<!-- HEADER -->
+<?php $this->load->view("templates/header") ?>
+<!-- HEADER -->
+
 
     <div class="container ">
         <div class="row">
@@ -281,6 +245,8 @@
     });
 });
     </script>
-    <script src="<?php bu('assets/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
-</body>
-</html>
+
+
+<!-- FOOTER -->
+<?php $this->load->view("templates/footer") ?>
+<!-- FOOTER -->

@@ -34,3 +34,5 @@ application/config/database.php
 application/config/config.php
 application/config/config.php
 application/config/database.php
+application/models/filiereT_model.php
+application/models/ForumT_model.php

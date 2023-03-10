@@ -1,5 +1,7 @@
 <!-- IMPORTATION -->
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/gestion_projet.css">
+<script src="<?php echo base_url(); ?>assets/js/gestion_projet.js"></script>
+<title>Gestion de projet</title>
 <!-- IMPORTATION -->
 
 <!-- HEADER -->
