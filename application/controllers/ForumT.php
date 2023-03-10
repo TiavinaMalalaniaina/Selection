@@ -9,6 +9,7 @@ class ForumT extends CI_Controller {
 <<<<<<< Updated upstream
 		$this->load->model('userT_model');
 		$this->load->helpers('date_helper');
+		if (!$this->userT_model->checkUser()) redirect('logT/');
 	}
 	
 =======
@@ -20,7 +21,17 @@ class ForumT extends CI_Controller {
 		$this->load->view('welcome_message');
 	}
 
-	public function test() {
+	public function search() {
+		$idUser = $this->session->userdata('iduser');
+		$user = $this->userT_model->getUserById($idUser);
+		$idfiliere = $user['idfiliere'];
+		$text = $this->input->post('text');
+		$problems = $this->forumT_model->search($text, $idfiliere);
+		$data = array(
+			'problems' => $problems,
+			'user' => $user
+		);
+		$this->load->view('listes_forum', $data);
 	}
 
 <<<<<<< Updated upstream
