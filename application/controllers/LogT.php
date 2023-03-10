@@ -6,7 +6,7 @@ class LogT extends CI_Controller {
     public function __construct(){
         parent::__construct();
         $this->load->model('userT_model');
-		if ($this->userT_model->checkUser()) redirect(site_url('welcome'));
+		// if ($this->userT_model->checkUser()) redirect(site_url('welcome'));
     }
 
     public function index() {
@@ -17,7 +17,7 @@ class LogT extends CI_Controller {
         $username = $this->input->post('username');
         $password = $this->input->post('password');
         $log = $this->userT_model->login($username, $password);
-        if ($log == 'username' || $log == 'password') redirect(site_url('logT/index'));
+        if ($log == 'username' || $log == 'password') echo $log;
         $this->session->set_userdata('iduser', $log['iduser']);
         redirect('welcome');
     }

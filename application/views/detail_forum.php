@@ -11,7 +11,7 @@
     <div class="container">
         <div class="question row">
             <div class="col-md-2 col-2 image">
-                <img src="<?php echo site_url('assets/images/profil.png') ?>" alt="">
+                <img src="<?php echo site_url($problems['img']) ?>" alt="">
             </div>
             <div class="col-md-9 col-9 content">
                 <h1><?php echo $problems['problem'] ?></h1>
@@ -32,7 +32,7 @@
         <div class="commentaires">
             <div class="row coms my-5">
                 <div class="col-md-1 col-1 profil">
-                    <img src="<?php echo site_url('assets/images/profil.png') ?>" alt="">
+                    <img src="<?php echo site_url($response['img']) ?>" alt="">
                     <br>
                     <label><?php echo $response['nom'] ?></label>
                 </div>

@@ -9,12 +9,24 @@
             return $user['nbr'];
         }
 
+        public function update($fil, $etab, $niv, $car, $idUser) {
+            $request = "UPDATE detailuser SET idfiliere=%s,idetablissement=%s,idniveauetude=%s,idcarriere=%s WHERE iduser=%s";
+            $request = sprintf($request, $fil, $etab, $niv, $car, $idUser);
+            $this->db->query($request);
+        }
+
         public function getUserById($idUser) {
             $request = 'SELECT * FROM user_detailled WHERE iduser=%d';
             $request = sprintf($request, $idUser);
             $query = $this->db->query($request);
             $user = $query->row_array();
             return $user;
+        }
+
+        public function modifImage($name, $idUser) {
+            $request = "UPDATE \"user\" SET img='%s' WHERE iduser=%s";
+            $request = sprintf($request, $name, $idUser);
+            $this->db->query($request);
         }
 
         public function login($username, $mdp) {

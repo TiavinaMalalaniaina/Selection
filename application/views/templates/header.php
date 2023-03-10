@@ -35,7 +35,7 @@
                     <a class="nav-link" href="<?php bu ('noteBookD'); ?>">Mes Notes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Mon compte</a>
+                    <a class="nav-link" href="<?php bu('accountT') ?>">Mon compte</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link deconnect" href="<?php bu ('logT'); ?>"><i class="fas fa-power-off"></i></a>

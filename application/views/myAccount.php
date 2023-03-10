@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../assets/fonts/fontawesome-5/css/all.min.css">
-    <link rel="stylesheet" href="../../assets/css/compte.css">
-    <link rel="stylesheet" href="../../assets/css/header.css">
+    <link rel="stylesheet" href="<?php echo site_url('assets/bootstrap/css/bootstrap.min.css') ?>">
+    <link rel="stylesheet" href="<?php echo site_url('assets/fonts/fontawesome-5/css/all.min.css') ?>">
+    <link rel="stylesheet" href="<?php echo site_url('assets/css/compte.css') ?>">
+    <link rel="stylesheet" href="<?php echo site_url('assets/css/header.css') ?>">
     <title>Mon compte</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="../../assets/images/logo-StudArd.png" alt=""></a>
+            <a class="navbar-brand" href="#"><img src="<?php echo site_url('assets/images/logo-StudArd.png') ?>" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -44,19 +44,20 @@
           </div>
         </div>
     </nav>
+    
 
     <div class="container">
         <div class="row">
             <div class="col-md-12 desc">
-                <h3>Ariala Fitia</h3>
+                <h3><?php echo $user['nom'].' '.$user['prenom'] ?></h3>
                 <div class="row">
                     <div class="col-md-5 self">
                         <label for="">Contact</label>
-                        <p>034 32 018 27</p>
+                        <p><?php echo $user['contact'] ?></p>
                     </div>
                     <div class="col-md-5 self">
                         <label for="">Email</label>
-                        <p>ariala@gmail.com</p>
+                        <p><?php echo $user['email'] ?></p>
                     </div>
                     <hr>
                     <div class="col-md-5">
@@ -68,7 +69,7 @@
                                     </div>
                                     <div class="col-md-8">
                                         <label for="">Filière</label>
-                                        <p>Informatique</p>
+                                        <p><?php echo $user['filiere'] ?></p>
                                     </div>
                                 </div>
                             </li>
@@ -79,7 +80,7 @@
                                     </div>
                                     <div class="col-md-8">
                                         <label for="">Etablissement</label>
-                                        <p>IT University</p>
+                                        <p><?php echo $user['etablissement'] ?></p>
                                     </div>
                                 </div>
                             </li>
@@ -90,7 +91,7 @@
                                     </div>
                                     <div class="col-md-8">
                                         <label for="">Niveau d'étude</label>
-                                        <p>BACC +2</p>
+                                        <p><?php echo $user['niveauetude'] ?></p>
                                     </div>
                                 </div>
                             </li>
@@ -101,15 +102,15 @@
                                     </div>
                                     <div class="col-md-8">
                                         <label for="">Carrière envisagée</label>
-                                        <p>Informaticien</p>
+                                        <p><?php echo $user['carriere'] ?></p>
                                     </div>
                                 </div>
                             </li>
                         </ul>
-                        <a href="" class="btn btn-warning mt-4 modif">Modifier</a>
+                        <a href="<?php echo site_url('accountT/modif') ?>" class="btn btn-warning mt-4 modif">Modifier</a>
                     </div>
                     <div class="col-md-6 profil">
-                        <img src="../../assets/images/profil/profil.webp" alt="">
+                        <img src="<?php echo site_url($user['img']) ?>" alt="">
                         <a href="" class="change" data-bs-toggle="modal" data-bs-target="#exampleModal">Changer photo de profil</a>
                     </div>
                     
@@ -117,7 +118,7 @@
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
-                                <form action="">
+                                <form action="<?php echo site_url('accountT/do_upload') ?>" method="post" enctype="multipart/form-data">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="exampleModalLabel">Changer photo de profil</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -160,6 +161,6 @@
             path.innerHTML = file.value;
         }
     </script>
-    <script src="../../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo site_url('assets/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 </body>
 </html>

@@ -2,6 +2,19 @@
     if(!defined('BASEPATH')) exit('No direct script access allowed');
     class ForumT_model extends CI_Model {
         
+                
+        public function search($text, $idFiliere) {
+            $problems = array();
+            $request = "SELECT * FROM forum_problem_detailled WHERE etat!='-1' AND idFiliere=%s AND problem LIKE '%s%s%s'";
+            $request = sprintf($request, $idFiliere, '%', $text, '%');
+            $query = $this->db->query($request);
+            foreach ($query->result_array() as $row) {
+                $problems[] = $row;    
+            }
+            return $problems;
+        }
+
+
         public function saveProblem($idUser, $idFiliere, $problem, $desc) {
             $query = "INSERT INTO forum_problem(proprietaire, idfiliere, problem, description) VALUES (%s, %s, '%s', '%s')";
             $query = sprintf($query, $idUser, $idFiliere, $problem, $desc);

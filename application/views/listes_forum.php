@@ -104,7 +104,7 @@
                     <a href="<?php echo site_url('ForumT/detail_forum?idforum_problem='.$problem['idforum_problem']) ?>">
                         <div class="row theme mt-3">
                             <div class="col-1 col-md-1">
-                            <img src="<?php echo site_url('assets/images/profil.png') ?>" alt="">
+                            <img src="<?php echo site_url($problem['img']) ?>" alt="">
                         </div>
                         <div class="offset-1 offset-md-1 col-8 col-md-8 text-content">
                             <div>
